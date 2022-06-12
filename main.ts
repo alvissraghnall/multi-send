@@ -63,6 +63,7 @@ document.querySelector(".new-field-button")!.addEventListener("click", (ev: Even
 });
 
 document.getElementById("page-form")!.addEventListener("submit", (ev: Event) => {
+  ev.preventDefault();
   createRipple(ev);
 });
 

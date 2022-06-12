@@ -66,6 +66,7 @@ input[type=text]:focus, .amount-input:focus {
   background-color: #C8C8D3;
   box-shadow: 0 0 4px #999;
   outline: none;
+  display: inline;
 }
 
 .ripple {
