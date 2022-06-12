@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  /*overflow-x: none; */
+  overflow-x: hidden;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.wrapper {
+  text-align: center;
+  
+}
+
+.logo {
+  margin-top: 1.3em;
+}
+
+.form-row {
+  margin: 3em;
+  border: .11em dashed silver;
+}
+
+input[type=text], .amount-input {
+  font-weight: 600;
+  font-size: .9em;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid #777ECA;
+  border-radius: 7px;
+}
+
+
+input[type=text]:focus, .amount-input:focus {
+  border-radius: 7px;
+  border: 2px solid #454EB5;
+}
+
+.form-label {
+  text-align: left;
+}
+
+
+.icon-credit {
+  position: fixed;
+  top: 90%;
+  left: 63%;
+  text-decoration: none;
+  color: goldenrod;
+  font-style: italic;
+}
+
+#page-form {
+  margin-bottom: .7em;
+}
+
+.new-field-button {
+  border: 2px dashed #8589B9;
+  border-radius: 50%;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  background-color: #C8C8D3;
+  box-shadow: 0 0 4px #999;
+  outline: none;
+}
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+
+.ripple:active {
+  background-color: #8F92AC;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.ripple:hover {
+  background: #9798A2 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+}
+
+.submit-btn {
+  position: relative;
+  overflow: hidden;
+  transition: background 400ms;
+  color: #fff;
+  background-color: #6200ee;
+  padding: 1rem 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  outline: 0;
+  border: 0;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+span.submit-btn-ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@media (min-width: 500px) {
+  .icon-credit {
+    left: 82%;
+    top: 94%;
+  }
+  
+  .address-input {
+    width: 60%;
+  }
+  
+  .address-input, .amount-input {
+    margin-right: 10px;
+  }
+  
+  .amount-input {
+    margin-left: 8px;
+  }
+
+}
