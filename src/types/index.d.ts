@@ -6,3 +6,5 @@ declare global {
     web3: Web3;
   }
 }
+
+

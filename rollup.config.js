@@ -1,24 +1,42 @@
 import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import json from "@rollup/plugin-json"
+import nodePolyfills from 'rollup-plugin-polyfill-node';
 
 
 const production = !false;
 
 export default {
   input: 'src/main.ts',
-  output: {
-    file: 'dist/main.js',
+  external: ["web3"],
+  output: [{
+    file: 'dist/bundle.js',
     format: 'iife',
-    sourcemap: "inline"
-  },
+    globals: {
+      Web3: "Web3"
+    }
+    //sourcemap: "inline"
+  }, {
+    file: 'dist/bundle.min.js',
+    format: 'iife',
+    plugins: [terser()]
+  }],
   plugins: [
     commonjs(),
     typescript({
-    sourceMap: !production,
-    inlineSources: !production
-  }),
+      sourceMap: !production,
+      //inlineSources: !production
+    }),
   
-  production && terser()
+    resolve({
+      browser: true,
+      preferBuiltins: false
+    }),
+  
+    json(),
+    nodePolyfills(),
+  
   ]
 };
