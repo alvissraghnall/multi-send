@@ -11,18 +11,21 @@ const production = !false;
 export default {
   input: 'src/main.ts',
   external: ["web3"],
-  output: [{
+  output: /*[{
     file: 'dist/bundle.js',
     format: 'iife',
     globals: {
       Web3: "Web3"
     }
     //sourcemap: "inline"
-  }, {
+  }, */{
     file: 'dist/bundle.min.js',
     format: 'iife',
+    globals: {
+      Web3: "Web3"
+    }
     plugins: [terser()]
-  }],
+  }/*]*/,
   plugins: [
     commonjs(),
     typescript({

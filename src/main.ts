@@ -3,7 +3,8 @@
 declare const Web3: any;
 
 let web3js;
-
+let Contract;
+let Multisend;
 
 function initweb3() {
 
@@ -18,6 +19,15 @@ function initweb3() {
     'https://ropsten.infura.io/<API KEy>'*/
     web3js = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
   }
+  web3js.eth.defaultAccount = web3js.eth.accounts[0];
+  Contract = web3js.eth.contract(/*ABI*/);
+  Multisend = Contract.at('PASTE CONTRACT ADDRESS HERE');
+       
+  console.log(Multisend);
+}
+
+function sendFunds () {
+  
 }
 
 // You should initialize web3 instance after window load event has fired to avoid any race condition.               
