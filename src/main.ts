@@ -1,6 +1,7 @@
 //import Web3 from "web3";
 //import Web3 from 'https://cdn.esm.sh/v58/web3@1.6.1/es2021/web3.js';
 declare const Web3: any;
+import { ABI } from "./abi";
 
 let web3js;
 let Contract;
@@ -20,8 +21,9 @@ function initweb3() {
     web3js = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
   }
   web3js.eth.defaultAccount = web3js.eth.accounts[0];
-  Contract = web3js.eth.contract(/*ABI*/);
-  Multisend = Contract.at('PASTE CONTRACT ADDRESS HERE');
+  const abi = 
+  Contract = web3js.eth.contract(ABI);
+  Multisend = Contract.at(/*CONTRACT ADDRESS*/);
        
   console.log(Multisend);
 }
