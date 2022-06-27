@@ -1,10 +1,11 @@
 //import Web3 from "web3";
 //import Web3 from 'https://cdn.esm.sh/v58/web3@1.6.1/es2021/web3.js';
 declare const Web3: any;
+const INFURA_URL = "https://ropsten.infura.io/v3/41b5820f64494703ba60ec7baf7eb02c";
 import { ABI } from "./abi";
 
 let web3js;
-let Contract;
+let contract;
 let Multisend;
 
 function initweb3() {
@@ -18,14 +19,14 @@ function initweb3() {
     by default local HTTP-RPC server exposes port 8545.
     you can use Infura Node Urls also
     'https://ropsten.infura.io/<API KEy>'*/
-    web3js = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
+    web3js = new Web3(new Web3.providers.HttpProvider('https://aurora-testnet.infura.io/v3/41b5820f64494703ba60ec7baf7eb02c'));
   }
   web3js.eth.defaultAccount = web3js.eth.accounts[0];
   const abi = 
-  Contract = web3js.eth.contract(ABI);
-  Multisend = Contract.at(/*CONTRACT ADDRESS*/);
+  contract = web3js.eth.Contract(ABI);
+  Multisend = contract.at(/*CONTRACT ADDRESS*/);
        
-  console.log(Multisend);
+  console.log(contract, Multisend);
 }
 
 function sendFunds () {

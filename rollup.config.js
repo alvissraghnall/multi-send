@@ -24,7 +24,6 @@ export default {
     globals: {
       Web3: "Web3"
     }
-    plugins: [terser()]
   }/*]*/,
   plugins: [
     commonjs(),
@@ -40,6 +39,6 @@ export default {
   
     json(),
     nodePolyfills(),
-  
+    terser()
   ]
 };
