@@ -25,7 +25,7 @@ function initweb3() {
   contract = new web3js.eth.Contract(ABI);
   //Multisend = contract.at(/*CONTRACT ADDRESS*/"");
        
-  console.log(contract, Multisend);
+  console.log(contract, contract.methods);
 }
 
 function sendFunds () {
