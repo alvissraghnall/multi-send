@@ -22,9 +22,8 @@ function initweb3() {
     web3js = new Web3(new Web3.providers.HttpProvider('https://aurora-testnet.infura.io/v3/41b5820f64494703ba60ec7baf7eb02c'));
   }
   web3js.eth.defaultAccount = web3js.eth.accounts[0];
-  const abi = 
-  contract = web3js.eth.Contract(ABI);
-  Multisend = contract.at(/*CONTRACT ADDRESS*/);
+  contract = new web3js.eth.Contract(ABI);
+  //Multisend = contract.at(/*CONTRACT ADDRESS*/"");
        
   console.log(contract, Multisend);
 }
