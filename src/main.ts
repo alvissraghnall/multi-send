@@ -79,6 +79,7 @@ function addFormRow(ev: Event) {
   document.getElementById("page-form")!.addEventListener("submit", (ev: Event) => {
     ev.preventDefault();
     createRipple(ev);
+    console.log(ev);
   });
   
   window.addEventListener('load', initweb3);  
