@@ -48,5 +48,16 @@
   
    
   <script src="bundle.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    document.getElementById("page-form").addEventListener("submit", function (ev) {
+      console.log(ev.target)
+      const fd = new FormData(ev.target);
+      console.log(...fd, [...fd]);
+      //new Response(fd).text().then(console.log) // To see the entire raw body
+      for (var pair of fd.entries()) {
+    console.log(pair[0]+ ', ' + pair[1]); 
+}
+    });
+  </script>
 </body>
 </html>
