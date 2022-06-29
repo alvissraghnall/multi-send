@@ -35,6 +35,7 @@ function sendFunds () {
 function setupFields (ev: FormEvent) {
   const formData = new FormData(ev.target);
   const fd = [...formData];
+  console.log(fd)
   let fields: {
     address: string,
     amount: number

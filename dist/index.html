@@ -54,9 +54,10 @@
       const fd = new FormData(ev.target);
       console.log(...fd, [...fd]);
       //new Response(fd).text().then(console.log) // To see the entire raw body
-      for (var pair of fd.entries()) {
+      /*for (var pair of fd.entries()) {
     console.log(pair[0]+ ', ' + pair[1]); 
-}
+}*/
+console.log(fd.getAll("address"))
     });
   </script>
 </body>
