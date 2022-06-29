@@ -50,6 +50,7 @@ function setupFields (ev: FormEvent) {
       amount: currAmt
     });
   }
+  console.log(fields);
 }
 
 // You should initialize web3 instance after window load event has fired to avoid any race condition.               
@@ -96,10 +97,11 @@ function addFormRow(ev: Event) {
     addFormRow(ev);
   });
   
-  document.getElementById("page-form")!.addEventListener("submit", (ev: Event) => {
+  document.getElementById("page-form")!.addEventListener("submit", (ev: FormEvent) => {
     ev.preventDefault();
     createRipple(ev);
-    console.log(ev);
+    //console.log(ev);
+    setupFields(ev);
   });
   
   window.addEventListener('load', initweb3);  
