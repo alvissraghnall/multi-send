@@ -32,10 +32,10 @@ function addFormRow(ev) {
     var inputs = "<input type=\"text\" name=\"address\" id=\"address\" class=\"address-input\" placeholder=\"Address\">\n      <input type=\"number\" name=\"amount\" id=\"amount\" class=\"amount-input\" placeholder=\"Amount\">";
     new_row.insertAdjacentHTML("afterbegin", inputs);
     button.insertAdjacentElement("beforebegin", new_row);
-}/*
+}
 document.querySelector(".new-field-button").addEventListener("click", function (ev) {
     addFormRow(ev);
-});*/
+});
 document.getElementById("page-form").addEventListener("submit", function (ev) {
     ev.preventDefault();
     createRipple(ev);

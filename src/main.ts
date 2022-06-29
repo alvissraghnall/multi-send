@@ -32,6 +32,26 @@ function sendFunds () {
   
 }
 
+function setupFields (ev: FormEvent) {
+  const formData = new FormData(ev.target);
+  const fd = [...formData];
+  let fields: {
+    address: string,
+    amount: number
+  }[] = [];
+  let currAddress: string;
+  let currAmt: number;
+  for (let i = 0; i < fd.length; i + 2) {
+    currAddress = fd[i][1];
+    currAmt = fd[i+1][1];
+    
+    fields.push({
+      address: currAddress,
+      amount: currAmt
+    });
+  }
+}
+
 // You should initialize web3 instance after window load event has fired to avoid any race condition.               
 
 function createRipple(event: Event) {
