@@ -42,6 +42,7 @@ function setupFields (ev: FormEvent) {
   let currAddress: string;
   let currAmt: number;
   for (let i = 0; i < fd.length; i + 2) {
+    console.log(fd[i])
     currAddress = fd[i][1];
     currAmt = fd[i+1][1];
     
