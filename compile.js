@@ -105,10 +105,18 @@ function writeOutput(compiled, buildPath) {
     }
 }
 
+function writeAbiFile (compiled) {
+    const _path = path.resolve(__dirname, './dist/');
+    fs.writeFile(path.join(_path, 'abi.json'), `const ABI = [${compiled}]` );
+    return buildPath;
+}
+
 // Workflow
 
 const buildPath = compilingPreperations();
 const config = createConfiguration();
 const compiled = compileSources(config);
-errorHandling(compiled);
+
+console.log(compiled);
+errorHandling(compiled.contracts['MultiSend.sol']);
 writeOutput(compiled, buildPath);

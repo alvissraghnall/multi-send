@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:ts": "tsc --project .",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "build:w": "rollup -c -w"
   },
   "keywords": [],
   "author": "",

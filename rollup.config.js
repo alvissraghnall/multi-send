@@ -10,7 +10,7 @@ const production = !false;
 
 export default {
   input: 'src/main.ts',
-  external: ["web3"],
+  // external: ["web3"],
   output: /*[{
     file: 'dist/bundle.js',
     format: 'iife',
@@ -25,20 +25,30 @@ export default {
       Web3: "Web3"
     }
   }/*]*/,
+  context: "this",
   plugins: [
-    commonjs(),
-    typescript({
-      sourceMap: !production,
-      //inlineSources: !production
-    }),
   
     resolve({
       browser: true,
-      preferBuiltins: false
+      preferBuiltins: false,
+      dedupe: ["web3", "util", "inherits", "readable-stream"]
     }),
-  
-    json(),
+
+    commonjs({
+      ignore: ["electron"]
+    }),
+
     nodePolyfills(),
-    terser()
+
+    json(),
+
+    // terser(),
+    
+    typescript({
+      sourceMap: !production,
+      compilerOptions: { target: "ES2018" },
+      //inlineSources: !production
+    }),
+    
   ]
 };

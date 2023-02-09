@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
 contract MultiSend {
@@ -22,10 +23,10 @@ contract MultiSend {
     return sum;
   }
   
-  function deposit(uint256 amount) payable public {
-    //require(msg.value == amount);
-    total_value += msg.value;
-  }
+  //function deposit(uint256 amount) payable public {
+  //  //require(msg.value == amount);
+  //  total_value += msg.value;
+  //}
   
   function send(address payable receiverAddr, uint receiverAmnt) private {
     receiverAddr.transfer(receiverAmnt);
